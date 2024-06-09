@@ -4,33 +4,118 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Naticord</title>
-    <meta name="description" content="Naticord is a Discord client tailored to your needs.">
-    <link rel="icon" type="image/x-icon" href="icon.png">
-    <meta name="keywords" content="naticord, discord">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #1e1e1e, #000000, #000000, #1e1e1e);
+            background-size: 400% 400%;
+            background-position: 0 0;
+            font-family: "Segoe UI Semilight", sans-serif;
+            margin: 0;
+            padding: 0;
+            animation: rollBackground 3s ease forwards;
+        }
+        @keyframes rollBackground {
+            from {
+                background-position: 90% 90%;
+            }
+            to {
+                background-position: 0 0;
+            }
+        }
+        header, nav, img {
+            opacity: 0;
+            animation: fadeInSlideDown 1s ease forwards;
+        }
+        @keyframes fadeInSlideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        header {
+            color: #fff;
+            text-align: center;
+            padding: 50px 0 20px;
+            font-size: 30px;
+        }
+        h1 {
+            font-size: 2em;
+            margin: 0;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+        nav ul li a:hover {
+            color: #ccc;
+        }
+        img {
+            display: block;
+            margin: 0 auto;
+            width: 30%;
+            max-width: 400px;
+            height: auto;
+        }
+        h3 {
+            opacity: 0.5;
+            font-size: 20px;
+            margin-top: 10px;
+        }
+        .download-button {
+            display: inline-block;
+            background-color: #9eacff;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 18px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            margin-top: 5px;
+        }
+        .download-button:hover {
+            background-color: #ddb8ff;
+        }
+        .logo {
+            width: 5%;
+        }
+        .infoheader {
+            padding: 20px 0 10px;
+        }
+    </style>
 </head>
 <body>
-    <div class="wrapper">
-        <nav class="navbar">
-            <div class="container">
-                <h1>Naticord</h1>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="download.html">Download</a></li>
-                </ul>
-            </div>
-        </nav>
-
-        <div class="content">
-            <h2>Welcome to Naticord</h2>
-            <div class="seperator"></div>
-            <p class="subtitle">A Discord client tailored for your needs.</p>
-            <a class="button-download" href="download.html">Download</a>
-            <a class="under-download-button" href="https://github.com/n1d3v/naticord">GitHub ↪</a>
-        </div>
-    </div>
+    <header>
+        <img src="logo.png" class="logo" alt="logo">
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="https://github.com/Naticord/naticord">GitHub</a></li>
+            <li><a href="https://dsc.gg/naticord">Discord</a></li>
+        </ul>
+    </nav>
+    <header class="infoheader">
+        <h1>Naticord</h1>
+        <h3>Simple, performant and clean.</h3>
+        <a class="download-button" href="https://github.com/Naticord/naticord/releases/download/naticord-0.1.1stable/naticord-setup.exe">Download</a>
+    </header>
+    <img src="ss.png" alt="screenshot">
 </body>
 </html>

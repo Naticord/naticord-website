@@ -13,6 +13,10 @@
             margin: 0;
             padding: 0;
             animation: rollBackground 3s ease forwards;
+            display: flex;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
         }
         @keyframes rollBackground {
             from {
@@ -68,8 +72,7 @@
         img {
             display: block;
             margin: 0 auto;
-            width: 30%;
-            max-width: 400px;
+            width: 25%;
             height: auto;
         }
         h3 {
@@ -93,12 +96,77 @@
             background-color: #ddb8ff;
         }
         .logo {
-            width: 5%;
+            width: 10%;
         }
         .infoheader {
             padding: 20px 0 10px;
         }
+
+        .card-container {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .card {
+            width: 300px;
+            height: 275px;
+            background-color: rgba(0, 0, 0, 0.25);
+            border: 1px solid #333;
+            border-radius: 20px;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s;
+            margin-top: 20px;
+            text-align: center;
+            align-items: center;
+            display: flex;
+            opacity: 0;
+            animation: fadeInSlideDown 1s ease forwards;
+        }
+
+        .card-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card-title {
+            font-size: 1.5em;
+            margin: 0 0 10px;
+            color: #fff;
+        }
+
+        .card-emoji {
+            font-size: 80px;
+        }
+
+        .card-description {
+            font-size: 1em;
+            margin: 0 0 20px;
+            color: #ddd;
+        }
     </style>
+    <link rel="icon" href="logo.png" type="image/x-icon">
+
+    <meta name="title" content="Naticord">
+    <meta name="description" content="The simple, performant and clean standalone Discord client.">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://naticord.lol/">
+    <meta property="og:title" content="Naticord">
+    <meta property="og:description" content="The simple, performant and clean standalone Discord client.">
+    <meta property="og:image" content="https://naticord.lol/logo.png">
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://naticord.lol/">
+    <meta property="twitter:title" content="Naticord">
+    <meta property="twitter:description" content="The simple, performant and clean standalone Discord client.">
+    <meta property="twitter:image" content="https://naticord.lol/logo.png">
 </head>
 <body>
     <header>
@@ -116,6 +184,28 @@
         <h3>Simple, performant and clean.</h3>
         <a class="download-button" href="https://github.com/Naticord/naticord/releases/download/naticord-0.2b3/naticord-setup.exe">Download</a>
     </header>
-    <img src="ss.png" alt="screenshot">
+    <div class="card-container">
+        <div class="card">
+            <div class="card-content">
+                <h1 class="card-emoji">💻</h1>
+                <h2 class="card-title">Performance</h2>
+                <p class="card-description">Naticord is focused on giving you the best possible experience while still keeping the app snappy and optimized.</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-content">
+                <h1 class="card-emoji">🔓</h1>
+                <h2 class="card-title">FOSS</h2>
+                <p class="card-description">Naticord is fully open source so you can look through the code so you know you are not being hacked.</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-content">
+                <h1 class="card-emoji">⚙️</h1>
+                <h2 class="card-title">Customization</h2>
+                <p class="card-description">Naticord has a built-in plugin system so you can download all your plugins and add them to customize your experience.</p>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

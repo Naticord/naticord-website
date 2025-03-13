@@ -8,9 +8,18 @@ const quotes = [
 
 const images = [
     "w10.png", // Windows 10
-    "w8.png", // Windows 8.1
-    "w7.png"  // Windows 7
+    "w8.png",  // Windows 8.1
+    "w7.png"   // Windows 7
 ];
+
+const preloadImages = (imageArray) => {
+    imageArray.forEach(src => {
+        const img = new Image();
+        img.src = src;
+    });
+};
+
+preloadImages(images);
 
 const updateContent = (element, contentArray, fadeClass, intervalDuration) => {
     let index = 0;
@@ -19,10 +28,16 @@ const updateContent = (element, contentArray, fadeClass, intervalDuration) => {
         element.classList.add("fade-out");
 
         setTimeout(() => {
-            element.textContent = contentArray[index];
-
             if (element.tagName.toLowerCase() === 'img') {
-                element.src = contentArray[index];
+                const nextIndex = (index + 1) % contentArray.length;
+                const nextImage = new Image();
+                nextImage.src = contentArray[nextIndex];
+
+                nextImage.onload = () => {
+                    element.src = contentArray[index];
+                };
+            } else {
+                element.textContent = contentArray[index];
             }
 
             element.classList.remove("fade-out");
@@ -44,4 +59,4 @@ const quoteElement = document.querySelector(".quotes");
 const imageElement = document.querySelector(".naticord-login-image");
 
 updateContent(quoteElement, quotes, "fade", 3000); 
-updateContent(imageElement, images, "fade", 3000); 
+updateContent(imageElement, images, "fade", 3000);

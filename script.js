@@ -44,4 +44,4 @@ const quoteElement = document.querySelector(".quotes");
 const imageElement = document.querySelector(".naticord-login-image");
 
 updateContent(quoteElement, quotes, "fade", 3000); 
-updateContent(imageElement, images, "fade", 4500); 
+updateContent(imageElement, images, "fade", 3000); 

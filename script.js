@@ -12,7 +12,7 @@ const images = [
     "https://github.com/user-attachments/assets/6fe3fe8d-adcb-4979-b574-110ea36b3742"  // Windows 7
 ];
 
-const updateContent = (element, contentArray, fadeClass) => {
+const updateContent = (element, contentArray, fadeClass, intervalDuration) => {
     let index = 0;
 
     function update() {
@@ -36,12 +36,12 @@ const updateContent = (element, contentArray, fadeClass) => {
         }, 500);
     }
 
-    setInterval(update, 3000);
+    setInterval(update, intervalDuration);
     update();
 };
 
 const quoteElement = document.querySelector(".quotes");
 const imageElement = document.querySelector(".naticord-login-image");
 
-updateContent(quoteElement, quotes, "fade");
-updateContent(imageElement, images, "fade");
+updateContent(quoteElement, quotes, "fade", 3000); 
+updateContent(imageElement, images, "fade", 4500); 

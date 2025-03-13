@@ -12,6 +12,10 @@ body {
     background: linear-gradient(to bottom right, #f9feff 50%, #b9d1ea) no-repeat fixed;
 }
 
+a {
+    text-decoration: none;
+}
+
 .navbar {
     display: flex;
     justify-content: center;

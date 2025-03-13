@@ -7,9 +7,9 @@ const quotes = [
 ];
 
 const images = [
-    "https://github.com/user-attachments/assets/678a30e7-45f9-449e-8a0c-c3498ef86bf0", // Windows 10
-    "https://github.com/user-attachments/assets/989b8a70-332d-447f-9f16-bd69cd651659", // Windows 8.1
-    "https://github.com/user-attachments/assets/6fe3fe8d-adcb-4979-b574-110ea36b3742"  // Windows 7
+    "w10.png", // Windows 10
+    "w8.png", // Windows 8.1
+    "w7.png"  // Windows 7
 ];
 
 const updateContent = (element, contentArray, fadeClass, intervalDuration) => {

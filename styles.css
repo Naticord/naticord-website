@@ -1,163 +1,104 @@
-body {
+* {
+    font-family: 'Segoe UI', sans-serif;
     margin: 0;
-    padding: 0;
-    font-family: 'Lexend', sans-serif;
-    color: #ffffff;
-    background:
-        radial-gradient(
-            90% 80% at 10% 40%,
-            rgba(50, 50, 50, 1) 0%,
-            rgba(50, 50, 50, 0.2) 60%,
-            rgba(30, 30, 30, 0) 100%
-        ),
-        radial-gradient(
-            90% 70% at 50% 20%,
-            rgba(30, 30, 30, 0.73) 0%,
-            rgba(30, 30, 30, 0.17) 60%,
-            rgba(30, 30, 30, 0) 100%
-        ),
-        radial-gradient(
-            100% 100% at 80% 90%,
-            rgba(20, 20, 20, 1) 0%,
-            rgba(20, 20, 20, 0) 100%
-        ),
-        linear-gradient(
-            20deg,
-            rgba(10, 10, 10, 1) 25%,
-            rgba(10, 10, 10, 0.77) 50%,
-            rgba(10, 10, 10, 0.4) 75%,
-            rgba(20, 20, 20, 0) 100%
-        ),
-        radial-gradient(
-            100% 100% at 10% 40%,
-            rgba(10, 10, 10, 1) 0%,
-            rgba(10, 10, 10, 0) 100%
-        ),
-        linear-gradient(
-            360deg,
-            rgba(5, 5, 5, 1) 0%,
-            rgba(5, 5, 5, 1) 100%
-        );
-    background-blend-mode: normal, normal, normal, normal, normal, normal;
-    width: 100%;
-    min-height: 100vh;
-    position: relative;
+}
+
+html, body {
+    height: 100%;
     overflow-x: hidden;
 }
 
-.wrapper {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    overflow: hidden;
+body {
+    background: linear-gradient(to bottom right, #f9feff 50%, #b9d1ea) no-repeat fixed;
 }
 
 .navbar {
-    background-color: rgba(3, 3, 3, 0.5);
-    backdrop-filter: blur(20px);
-    padding: 10px 0;
-}
-
-.container {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.navbar h1 {
-    font-size: 24px;
-}
-
-.navbar ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-}
-
-.navbar ul li {
-    margin-left: 20px;
-}
-
-.navbar ul li a {
-    text-decoration: none;
-    color: #ffffff;
-    transition: color 0.3s ease;
-}
-
-.navbar ul li a:hover {
-    color: #7289da;
-}
-
-.content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
-    flex-grow: 1;
+    align-items: center;
+    padding: 1rem;
+    width: 100vw;
+}
+
+.naticord-logo {
+    width: 64px;
+    height: 64px;
+}
+
+.naticord-login-image {
+    pointer-events: none;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.content-wrapper {
+    margin: 0 auto;
+    width: 1050px;
+    height: calc(100% - 45px);
+    display: flex;
+    align-items: center;
+    gap: 100px;
+    justify-content: space-between;
+}
+
+.content-left {
+    width: 700px;
+}
+
+.header {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.bottom-header {
+    width: 400px;
+    margin-bottom: 6px;
+}
+
+.license-notice {
+    margin-bottom: 12px;
+    font-size: 12px;
+    opacity: 0.5;
+}
+
+.download-link {
+    display: inline-block;
+    background-color: #7289DA;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+.quotes {
+    opacity: 1;
+    font-weight: lighter;
+    font-style: italic;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.footer {
+    padding: 12px;
+    opacity: 0.25;
     text-align: center;
-    padding: 50px 0;
+}
+
+.dots span:nth-child(1) {
+    opacity: 0.70;
+}
+
+.dots span:nth-child(2) {
+    opacity: 0.35;
+}
+
+.dots span:nth-child(3) {
+    opacity: 0.15;
+}
+
+.fade-out {
     opacity: 0;
-    transform: translateY(-50px);
-    animation: slideIn 0.5s ease forwards;
 }
 
-.content h2 {
-    font-size: 36px;
-    margin-bottom: 10px;
-}
-
-.content .subtitle {
-    font-size: 18px;
-    margin-top: 0;
-}
-
-.button-download {
-    display: inline-block;
-    padding: 15px 30px;
-    background-color: #7289da;
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 16px;
-    border-radius: 50px;
-    transition: background-color 0.3s ease;
-}
-
-.button-download:hover {
-    background-color: #5f73a1;
-}
-
-@keyframes slideIn {
-    from {
-        opacity: 0;
-        transform: translateY(-50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.gradient-span {
-    background: linear-gradient(45deg, #ff6b6b, #ffce00);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    font-weight: bold;
-}
-
-.under-download-button {
-    display: inline-block;
-    padding: 10px 20px;
-    color: rgba(255, 255, 255, 0.6);
-    text-decoration: none;
-    font-size: 16px;
-    transition: color 0.3s ease;
-}
-
-.under-download-button:hover {
-    color: rgba(255, 255, 255, 0.8);
+.fade-in {
+    opacity: 1;
 }
